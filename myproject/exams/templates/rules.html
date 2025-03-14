@@ -1,0 +1,23 @@
+
+<!-- filepath: c:\Users\Sarthak\OneDrive\ドキュメント\AssignmentE\myproject\exams\templates\rules.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rules</title>
+    <script>
+        function enableNextButton() {
+            var checkbox = document.getElementById('agree');
+            var nextButton = document.getElementById('nextButton');
+            nextButton.disabled = !checkbox.checked;
+        }
+    </script>
+</head>
+<body>
+    <h2>Rules</h2>
+    <p>Here are the rules...</p>
+    <form action="{% url 'question_view' question_id=1 %}" method="get">
+        <input type="checkbox" id="agree" name="agree" onclick="enableNextButton()"> I agree to the rules<br><br>
+        <button type="submit" id="nextButton" disabled>Next</button>
+    </form>
+</body>
+</html>

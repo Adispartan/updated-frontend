@@ -1,0 +1,35 @@
+<!-- filepath: c:\Users\Sarthak\OneDrive\ドキュメント\AssignmentE\myproject\exams\templates\question_entry.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Questions</title>
+</head>
+<body>
+    <h2>Enter Questions for {{ set_name }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% load custom_tags %}
+        {% for i in num_questions|times %}
+            <h3>Question {{ i|add:1 }}</h3>
+            <label for="question_{{ i }}">Question:</label>
+            <input type="text" id="question_{{ i }}" name="question_{{ i }}" required><br><br>
+            <label for="option1_{{ i }}">Option 1:</label>
+            <input type="text" id="option1_{{ i }}" name="option1_{{ i }}" required><br><br>
+            <label for="option2_{{ i }}">Option 2:</label>
+            <input type="text" id="option2_{{ i }}" name="option2_{{ i }}" required><br><br>
+            <label for="option3_{{ i }}">Option 3:</label>
+            <input type="text" id="option3_{{ i }}" name="option3_{{ i }}" required><br><br>
+            <label for="option4_{{ i }}">Option 4:</label>
+            <input type="text" id="option4_{{ i }}" name="option4_{{ i }}" required><br><br>
+            <label for="correct_option_{{ i }}">Correct Option:</label>
+            <select id="correct_option_{{ i }}" name="correct_option_{{ i }}" required>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+            </select><br><br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

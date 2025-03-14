@@ -1,0 +1,23 @@
+
+<!-- filepath: c:\Users\Sarthak\OneDrive\ドキュメント\AssignmentE\myproject\exams\templates\set_selection.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Set</title>
+</head>
+<body>
+    <h2>Select Set</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="set_name">Select Set:</label>
+        <select id="set_name" name="set_name" required>
+            <option value="Set A">Set A</option>
+            <option value="Set B">Set B</option>
+            <option value="Set C">Set C</option>
+        </select><br><br>
+        <label for="num_questions">Number of Questions:</label>
+        <input type="number" id="num_questions" name="num_questions" required><br><br>
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
